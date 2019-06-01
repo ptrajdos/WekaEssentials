@@ -1,0 +1,95 @@
+<project xmlns = "http://maven.apache.org/POM/4.0.0"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://maven.apache.org/POM/4.0.0
+   http://maven.apache.org/xsd/maven-4.0.0.xsd">
+   <modelVersion>4.0.0</modelVersion>
+
+   <groupId>com.github.ptrajdos</groupId>
+   <artifactId>WekaEssentials</artifactId>
+   <version>0.1.0</version>
+   <packaging>pom</packaging>
+   
+   <name>WekaEssentials</name>
+   <description> Root package for Weka plugins developed by Pawel Trajdos </description>
+   <url>https://github.com/ptrajdos/WekaNearestCentroid</url>
+
+  <licenses>
+    <license>
+      <name>GNU General Public License 3</name>
+      <url>http://www.gnu.org/licenses/gpl-3.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <developers>
+    <developer>
+      <id>ptrajdos</id>
+      <name>Pawel Trajdos</name>
+    </developer>
+  </developers>
+
+  <scm>
+   <connection>scm:git:git://github.com/ptrajdos/WekaTools.git</connection>
+   <developerConnection>scm:git:ssh://github.com/ptrajdos/WekaTools.git</developerConnection>
+   <url>https://github.com/ptrajdos/WekaEssentials/tree/master</url>
+ </scm>
+
+
+<repositories>
+     <repository>
+        <id>project-repo</id>
+        <name>project</name>
+        <url>file:${project.basedir}/lib</url>
+    </repository>
+ </repositories>
+
+  <distributionManagement>
+  <snapshotRepository>
+    <id>ossrh</id>
+    <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+  </snapshotRepository>
+  <repository>
+    <id>ossrh</id>
+    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+  </repository>
+</distributionManagement>
+  
+  <dependencyManagement>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+      <scope>test</scope>
+    </dependency>
+    
+    <dependency>
+      <groupId>nz.ac.waikato.cms.weka</groupId>
+      <artifactId>weka-stable</artifactId>
+      <version>[3.8.3,)</version>
+    </dependency>
+
+    <dependency>
+      <groupId>nz.ac.waikato.cms.weka</groupId>
+      <artifactId>weka-stable</artifactId>
+      <version>[3.8.3,)</version>
+      <type>test-jar</type>
+      <scope>test</scope>
+    </dependency>
+     <!-- mtj library modified by Weka authors -->
+   <dependency>
+      <groupId>com.googlecode.matrix-toolkits-java</groupId>
+      <artifactId>mtj</artifactId>
+      <version>1.0.4-WEKA</version>
+      <type>jar</type>
+      <scope>compile</scope>
+    </dependency>
+  </dependencies>
+  </dependencyManagement>
+    
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+  </properties>
+   
+</project>
